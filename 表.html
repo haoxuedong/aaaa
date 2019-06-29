@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <canvas id="can1" style="width: 300px;height: 150px; border: 1px solid rebeccapurple;">
+
+    </canvas>
+    <script>
+        /* 闭合图像
+       * .fillstyle 控制闭合图形的   填充色
+       * 非闭合图形
+       * .strokestyle 指定画笔的颜色
+       * .beginPath()开始图形绘制
+       *.moveTo()移动鼠标设置起始点
+       * .lineTo()设置线的端点
+       *.fillRect()绘制带填充色的圆
+       * .1fillRect() 方法绘制“已填色”的矩形。默认的填充颜色是黑色。
+       * .stroke()绘制边控
+       * .closePath()结束绘制
+        *  */
+            var c = document.getElementById("can1");
+            var ctx = c.getContext("2d");
+            var my_gradient=ctx.createLinearGradient(0,30,0,170);
+        my_gradient.addColorStop(0.2,"pink");
+        my_gradient.addColorStop(0.4,"MistyRose");
+            ctx.beginPath();
+        //  ctx.style.background = "#FF0000";//radial-gradient(red, green, blue);
+            ctx.arc(100,75,50,0,2*Math.PI);
+            ctx.moveTo(100,75);
+            ctx.lineTo(100,35);
+            ctx.moveTo(100,75);
+            ctx.lineTo(130,75);
+            ctx.fillStyle=my_gradient;
+            // ctx.fillStyle = '#dddddd'; // 设置颜色
+       // ctx.style.background="linear-gradient(red, blue)";
+              ctx.fill();
+            ctx.stroke();
+            ctx.closePath();
+
+
+     //   ctx.fillRect(20,20,150,100);
+
+    </script>
+
+</body>
+</html>
